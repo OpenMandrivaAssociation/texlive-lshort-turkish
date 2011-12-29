@@ -16,8 +16,6 @@ Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lshort-turkish.do
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 A Turkish translation of Oetiker's (not so) short introduction.
@@ -27,7 +25,6 @@ A Turkish translation of Oetiker's (not so) short introduction.
 %doc %{_texmfdistdir}/doc/latex/lshort-turkish/README
 %doc %{_texmfdistdir}/doc/latex/lshort-turkish/lshort-tr.pdf
 %doc %{_texmfdistdir}/doc/latex/lshort-turkish/trlshort-src.zip
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -38,5 +35,3 @@ A Turkish translation of Oetiker's (not so) short introduction.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
