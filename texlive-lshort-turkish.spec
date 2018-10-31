@@ -6,7 +6,7 @@
 # catalog-version 4.20
 Name:		texlive-lshort-turkish
 Version:	4.20
-Release:	10
+Release:	11
 Summary:	Turkish introduction to LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/info/lshort/turkish
