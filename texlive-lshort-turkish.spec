@@ -1,31 +1,20 @@
-Name:		texlive-lshort-turkish
-Version:	15878
-Release:	2
+%global tl_name lshort-turkish
+%global tl_revision 79461
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	4.20
+Release:	%{tl_revision}.1
 Summary:	Turkish introduction to LaTeX
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/info/lshort/turkish
-License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lshort-turkish.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lshort-turkish.doc.r%{version}.tar.xz
+License:	gpl2+
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lshort-turkish.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lshort-turkish.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
 A Turkish translation of Oetiker's (not so) short introduction.
 
-#-----------------------------------------------------------------------
-%files
-%doc %{_texmfdistdir}/doc/latex/lshort-turkish/README
-%doc %{_texmfdistdir}/doc/latex/lshort-turkish/lshort-tr.pdf
-%doc %{_texmfdistdir}/doc/latex/lshort-turkish/trlshort-src.zip
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar doc %{buildroot}%{_texmfdistdir}
